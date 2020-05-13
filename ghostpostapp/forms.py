@@ -1,5 +1,5 @@
 from django import forms
-from posts.models import PostItem
+from ghostpostapp.models import PostItem
 
 class AddPost(forms.ModelForm):
     class Meta:

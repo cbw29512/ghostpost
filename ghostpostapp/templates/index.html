@@ -1,5 +1,6 @@
 <h1>Ghost Post!</h1>
 
 {% for post in data %}
-    <a href = {% url 'post_details' id=post.id %}> {{ post }}</a>
+    <p><a href = {% url 'post_details' id=post.id %}> {{ post }} </a></p>
+    {{ post.likes }} -- Like(s)!
 {% endfor %}

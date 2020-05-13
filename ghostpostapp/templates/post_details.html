@@ -1,7 +1,14 @@
-Details
-
-{{ post.title }}
-
+<h1>Post Details</h1>
+<ul>
+{{ post.post_title }}
+</ul>
+<ul>
 {{ post.date }}
-
+</ul>
+<ul>
 {{ post.body }}
+</ul>
+<ul>
+<a href='/like/1'>Click me to like this post!</a>
+<p>{{ post.likes }} -- like(s)!</p>
+</ul>

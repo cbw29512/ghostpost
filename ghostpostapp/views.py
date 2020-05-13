@@ -1,5 +1,6 @@
 from django.shortcuts import render, reverse, HttpResponseRedirect
 from ghostpostapp.models import PostItem
+from ghostpostapp.forms import AddPost
 # Create your views here.
 
 
@@ -15,10 +16,20 @@ def post_item(request):
 def like_view(request, post_id):
     post = PostItem.objects.get(id=post_id)
     post.likes += 1
-    post.save
-
+    post.save()
+    return HttpResponseRedirect(reverse('post_details', kwargs={'id': post_id}))
+    
 
 def post_details(request, id):
-    html = 'index.html'
+    html = 'post_details.html'
     post = PostItem.objects.get(id=id)
     return render(request, html, {'post': post})    
+
+def add_post(request):
+    html = 'generic_form.html'
+    form = AddPost()
+    if request.method == 'POST':
+        form = AddPost[request.POST]
+        form.save()
+        return HttpResponseRedirect(reverse('home'))
+    return render(request, html, {'form':form})
