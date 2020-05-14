@@ -1,10 +1,19 @@
 <h1>Ghost Post!</h1>
-<a href = {%url 'home'%}>View ALL Post</button></a> 
-<a href = {%url 'boast'%}>View Boast</button></a>
-<a href = {%url 'roast'%}>View Roast</button></a>
-<a href = {%url 'form'%}>Add Boast/Roast</button></a>
+<details>
+<summary>Click To add new &#128123; post!;</summary>
+<form action='' method='post'>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type='submit' value='Add Post'>
+</form>
+</details>
+<p>
+<a href = {%url 'home'%}><button>View ALL Post</button></a> |
+<a href = {%url 'boast'%}><button>View Boast</button></a> |
+<a href = {%url 'roast'%}><button>View Roast</button></a>
+</p>
 
 {% for post in data %}
-    <li><a href = {% url 'post_details' id=post.id %}>{{ post }} {{ post.date }} {{ post.body }}</a></li>
-    {{ post.results }} -- Like(s)!
+    <li><a href = {% url 'post_details' id=post.id %}>{{ post }}</a> <br> {{ post.date }} <br> {{ post.body }}</li>
+    {{ post.results }} -- Like(s)!<br>
 {% endfor %}

@@ -6,7 +6,12 @@ from ghostpostapp.forms import AddPost
 
 def index(request):
     data = PostItem.objects.order_by('date')
-    return render(request, 'index.html', {'data':data})
+    form = AddPost()
+    if request.method == 'POST':
+        form = AddPost(request.POST)
+        form.save()
+        return HttpResponseRedirect(reverse('home'))
+    return render(request, 'index.html', {'form': form, 'data':data})
 
 
 def like_view(request, post_id):
@@ -27,16 +32,6 @@ def post_details(request, id):
     html = 'post_details.html'
     post = PostItem.objects.get(id=id)
     return render(request, html, {'post': post})    
-
-
-def add_post(request):
-    html = 'generic_form.html'
-    form = AddPost()
-    if request.method == 'POST':
-        form = AddPost(request.POST)
-        form.save()
-        return HttpResponseRedirect(reverse('home'))
-    return render(request, html, {'form':form})
 
 
 def boast_views(request):
