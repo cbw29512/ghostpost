@@ -15,10 +15,16 @@ def post_item(request):
 
 def like_view(request, post_id):
     post = PostItem.objects.get(id=post_id)
-    post.likes += 1
+    post.results += 1
     post.save()
     return HttpResponseRedirect(reverse('post_details', kwargs={'id': post_id}))
     
+def dislike_view(request, post_id):
+    post = PostItem.objects.get(id=post_id)
+    post.results -= 1
+    post.save()
+    return HttpResponseRedirect(reverse('post_details', kwargs={'id': post_id}))
+
 
 def post_details(request, id):
     html = 'post_details.html'

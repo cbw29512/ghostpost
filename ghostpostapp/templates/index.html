@@ -2,5 +2,5 @@
 
 {% for post in data %}
     <p><a href = {% url 'post_details' id=post.id %}> {{ post }} </a></p>
-    {{ post.likes }} -- Like(s)!
+    {{ post.results }} -- Like(s)!
 {% endfor %}
