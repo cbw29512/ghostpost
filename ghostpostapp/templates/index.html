@@ -1,6 +1,10 @@
 <h1>Ghost Post!</h1>
+<a href = {%url 'home'%}>View ALL Post</button></a> 
+<a href = {%url 'boast'%}>View Boast</button></a>
+<a href = {%url 'roast'%}>View Roast</button></a>
+<a href = {%url 'form'%}>Add Boast/Roast</button></a>
 
 {% for post in data %}
-    <p><a href = {% url 'post_details' id=post.id %}> {{ post }} </a></p>
+    <li><a href = {% url 'post_details' id=post.id %}>{{ post }} {{ post.date }} {{ post.body }}</a></li>
     {{ post.results }} -- Like(s)!
 {% endfor %}

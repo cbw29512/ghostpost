@@ -10,6 +10,7 @@
 </ul>
 <ul>
 <p>{{ post.results }} -- like(s)!</p>
-<p><a href='/like/1'><button>BOAST!</button>&#128077;</a> |
-<a href='/dislike/1'><button>Roast!</button>&#128078;</a></p>
+<p><a href='/like/{{post.id}}'><button>BOAST!</button>&#128077;</a> |
+<a href='/dislike/{{post.id}}'><button>Roast!</button>&#128078;</a></p>
 </ul>
+<a href="{% url 'home' %}">Return to &#128123; POST</a>
