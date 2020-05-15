@@ -1,4 +1,5 @@
 <h1>Ghost Post!</h1>
+{% if form %}
 <details>
 <summary>Click To add new &#128123; post!;</summary>
 <form action='' method='post'>
@@ -7,6 +8,7 @@
     <input type='submit' value='Add Post'>
 </form>
 </details>
+{% endif %}
 <p>
 <a href = {%url 'home'%}><button>View ALL Post</button></a> |
 <a href = {%url 'boast'%}><button>View Boast</button></a> |

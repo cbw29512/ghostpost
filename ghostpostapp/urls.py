@@ -7,5 +7,6 @@ urlpatterns = [
     path('dislike/<int:post_id>/', views.dislike_view),
     path('post_details/<int:id>', views.post_details, name='post_details'),
     path('boast/', views.boast_views, name='boast'),
-    path('roast/', views.roast_views, name='roast')
+    path('roast/', views.roast_views, name='roast'),
+    
 ]

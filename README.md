@@ -24,8 +24,4 @@ when clicked, these buttons affect the numbers on the relevant post appropriatel
 Ability to sort content based on vote score (hint: you may need to calculate the vote score) 
 Page to submit a boast or a roast
 
-Hints:
-button hrefs can use template data, just like everything else
-voting is not meant to be secure; this is effectively a proof of concept application
-you do not need to worry about figuring out if someone has already voted on something
  

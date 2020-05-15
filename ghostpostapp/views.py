@@ -42,4 +42,5 @@ def boast_views(request):
 def roast_views(request):
     data = PostItem.objects.filter(boast_or_roast=False)
     return render(request, 'index.html', {'data': data})
-    
+
+

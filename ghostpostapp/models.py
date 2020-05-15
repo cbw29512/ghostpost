@@ -11,6 +11,7 @@ class PostItem(models.Model):
     results = models.IntegerField(default=0)
     boast_or_roast = models.BooleanField(default=False, help_text="Check to Boast")
     
+    
 
     def __str__(self):
         return self.post_title
