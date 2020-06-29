@@ -8,5 +8,6 @@ urlpatterns = [
     path('post_details/<int:id>', views.post_details, name='post_details'),
     path('boast/', views.boast_views, name='boast'),
     path('roast/', views.roast_views, name='roast'),
+    path('vote/', views.vote_views, name='vote'),
     
 ]

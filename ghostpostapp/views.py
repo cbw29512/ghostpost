@@ -43,4 +43,6 @@ def roast_views(request):
     data = PostItem.objects.filter(boast_or_roast=False)
     return render(request, 'index.html', {'data': data})
 
-
+def vote_views(request):
+    data = PostItem.objects.order_by('-results')
+    return render(request, 'index.html', {'data': data})
